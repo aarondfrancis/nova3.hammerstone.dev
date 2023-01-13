@@ -7,13 +7,17 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
+        "hammerstone/refine-laravel": "^0.3.6",
+        "hammerstone/refine-nova": "^0.2.1",
         "laravel/framework": "^9.19",
         "laravel/nova": "~3.0",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "laravel/vapor-core": "^2.27",
+        "fakerphp/faker": "^1.9.1"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9.1",
+        "barryvdh/laravel-debugbar": "^3.7",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
@@ -25,6 +29,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "composer",
+            "url": "https://refine.composer.sh"
         }
     ],
     "autoload": {

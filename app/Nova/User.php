@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Filters\UserFilter;
+use Hammerstone\Refine\Nova\RefinesModels;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
@@ -10,12 +12,21 @@ use Laravel\Nova\Fields\Text;
 
 class User extends Resource
 {
+    use RefinesModels;
+
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
     public static $model = \App\Models\User::class;
+
+    /**
+     * The Refine filter to use for this model.
+     *
+     * @var string
+     */
+    public static $filter = UserFilter::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -71,7 +82,9 @@ class User extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            static::refineCard(),
+        ];
     }
 
     /**

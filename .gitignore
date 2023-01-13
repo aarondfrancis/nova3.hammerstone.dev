@@ -16,3 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.vapor/
+.env.staging
+.env.pull

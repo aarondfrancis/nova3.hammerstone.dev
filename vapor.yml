@@ -1,0 +1,18 @@
+id: 40954
+name: nova3
+environments:
+    production:
+        memory: 1024
+        cli-memory: 512
+        queues: false
+        scheduler: false
+        runtime: 'php-8.0:al2'
+        domain:
+          - nova3.hammerstone.dev
+        database: Hammerstone
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+            - 'php artisan event:cache'
+            - 'npm ci && npm run build && rm -rf node_modules'
+            - 'php artisan migrate --force'
+
